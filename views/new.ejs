@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>習慣サポート</title>
+		<link type="text/css" rel="stylesheet" href="/css/neweditstyle.css">
+		<script src="/send_url.js"></script>
+    </head>
+
+	<body>
+		<header>
+			<div class="container">
+				<div class="header-left">
+					<img class="logo" src="/images/title.png">
+				</div>
+				<div class="header-right">
+					<a href="/list" class="add">習慣一覧</a>
+                </div>
+			</div>	
+		</header>
+
+		<div class="name-content">
+			<div class="container-middle">
+				<form action="/create" method="post">
+					<h3>何を習慣にしますか？</h3>
+					<input class="name-size" type="text" name="habitListName">
+			</div>
+		</div>
+
+		<div class="main-content">
+			<div class="container">
+				<form action="/create" method="post">
+					<h3>具体的な内容を記入してください</h3>
+					<textarea name="habitListContent" type="text"></textarea>
+					<input class="save" type="submit" value="保存する">
+				</form>
+			</div>	
+		</div>
+	</body>
+
+</html>

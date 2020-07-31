@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="utf-8">
+		<title>習慣サポート</title>
+		<link rel="stylesheet" href="/css/list-style.css">
+		<script src="/send_url.js"></script>
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<div class="header-left">
+					<img class="logo" src="/images/title.png">
+				</div>
+				<div class="header-right">
+					<a href="/new" class="add">＋ 新規作成</a>
+                </div>
+			</div>	
+		</header>
+
+			
+
+		<div class="table-wrapper">
+			<ul class="table-body">
+				<% habit_list.forEach((habit_list_content) => { %>
+					<li>
+					  	<div class="habit_list-data">
+					  	  	<span class="name-column"><%= habit_list_content.name %></span>
+
+					  	<div class="habit_list-menu">
+					  	  	<form action="/judge/<%= habit_list_content.id %>" method="post">
+							  <% if (habit_list_content.judge === 1) { %>
+							    <input class="done" type="submit" value="完了">
+							  <% } else { %>
+							    <input class="unfinished" type="submit" value="未完">
+							  <% } %>
+							</form>
+
+						  	<a class="edit" href="/edit/<%= habit_list_content.id %>">編集</a>
+
+						  	<form action="/delete/<%= habit_list_content.id %>" method="post">
+						  		<input class="delete" type="submit" value="削除">
+						  	</form>
+					  	</div>
+					  	</div>
+
+					  	<p><span class="content-column"><%= habit_list_content.content %></span></p>
+					  	<br>
+					  	<br>
+					</li>
+				<% }) %>
+			</ul>
+		</div>
+
+			
+
+	</body>
+</html>

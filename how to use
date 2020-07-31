@@ -1,0 +1,12 @@
+When you start
+
+1. npm run start
+2. brew services start mysql@5.7
+3. localhost:8888/list
+
+
+
+When you quit
+
+1. brew services stop mysql@5.7
+2. npm run start -> ^c
