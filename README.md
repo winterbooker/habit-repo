@@ -1,2 +1,4 @@
 # habit-app-repo
-This is an app that supports habit
+習慣にしたいことを登録し、編集や削除を行えます。
+その日達成できたら完了ボタンを押してください。
+次の日になると完了済みも未完了にリセットされます。
