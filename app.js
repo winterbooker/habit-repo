@@ -1,17 +1,21 @@
 const express = require('express');
 const mysql = require('mysql');
 
+
 const app = express();
+
 
 app.use(express.static('public'));
 app.use(express.urlencoded({extended: false}));
 
+
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'mM70197019',
+  password: 'password',
   database: 'habit'
 });
+
 
 connection.connect((err) => {
   if (err) {
@@ -21,9 +25,11 @@ connection.connect((err) => {
   console.log('success');
 });
 
+
 app.get('/new', (req, res) => {
 	res.render('new.ejs');
 });
+
 
 app.get('/list', (req, res) => {
 	connection.query(
@@ -34,8 +40,8 @@ app.get('/list', (req, res) => {
 	);
 });
 
-app.post('/create', (req, res) => {
 
+app.post('/create', (req, res) => {
 	connection.query(
 		'INSERT INTO habit_list(name, content) VALUES(?, ?)',
 		[req.body.habitListName, req.body.habitListContent],
@@ -45,6 +51,7 @@ app.post('/create', (req, res) => {
 	);
 });
 
+
 app.post('/delete/:id', (req, res) => {
 	connection.query(
 		'DELETE FROM habit_list WHERE id= ?',
@@ -53,7 +60,6 @@ app.post('/delete/:id', (req, res) => {
 			res.redirect('/list');
 		});
 });
-
 
 
 app.post('/judge/:id', (req, res) => {
@@ -66,7 +72,6 @@ app.post('/judge/:id', (req, res) => {
 		
 	}
 );
-
 
 
 app.get('/edit/:id', (req, res) => {

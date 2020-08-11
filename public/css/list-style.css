@@ -44,6 +44,16 @@ header {
 	background-color: rgba(152, 71, 62, 0.2);
 }
 
+.header-center {
+	text-align: center;
+}
+
+#view_date {
+	color: white;
+	letter-spacing: 2px;
+	line-height: 50px;
+}
+
 .table-body {
 	list-style: none;
 }
@@ -111,7 +121,22 @@ header {
 .content-column {
 	display: inline-block;
 	margin-left: 50px;
+	margin-right: 50px;
 	margin-top: 20px;
+	white-space: pre-wrap;
 }
 
+@media (max-width: 700px) {
+	.done {
+		display: none;
+	}
+
+	.unfinished {
+		display: none;
+	}
+
+	#view_date {
+		display: none;
+	}
+}
 

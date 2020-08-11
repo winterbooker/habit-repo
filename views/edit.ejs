@@ -24,7 +24,7 @@
             <div class="container-middle">
                 <form action="/update/<%=habit_list.id%>" method="post">
                     <h3>何を習慣にしますか？</h3>
-                    <input class="name-size" type="text" value="<%= habit_list.name %>" name="habitListName">
+                    <input class="name-size" type="text" value="<%= habit_list.name %>" name="habitListName" maxlength='10'>
             </div>
         </div>
 
